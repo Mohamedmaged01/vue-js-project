@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "sofa 243",
+      "price": 156,
+      "image": "https://vue-ecom.vercel.app/img/1.jpg",
+      "category": "sofas",
+      "color": "white"
+    },
+    {
+      "id": 2,
+      "name": "lamp 54",
+      "price": 756,
+      "image": "https://vue-ecom.vercel.app/img/2.jpg",
+      "category": "lamps",
+      "color": "black"
+    },
+    {
+      "id": 3,
+      "name": "fotal 34",
+      "price": 362,
+      "image": "https://vue-ecom.vercel.app/img/3.jpg",
+      "category": "chairs",
+      "color": "blue"
+    },
+    {
+      "id": 4,
+      "name": "fotal324",
+      "price": 505,
+      "image": "https://vue-ecom.vercel.app/img/4.jpg",
+      "category": "chairs",
+      "color": "black"
+    },
+    {
+      "id": 5,
+      "name": "sofa-1",
+      "price": 243,
+      "image": "https://vue-ecom.vercel.app/img/5.jpg",
+      "category": "sofas",
+      "color": "black"
+    },
+    {
+      "id": 6,
+      "name": "Fotal-2",
+      "price": 94,
+      "image": "https://vue-ecom.vercel.app/img/6.jpg",
+      "category": "sofas",
+      "color": "black"
+    },
+    {
+      "id": 7,
+      "name": "Fotal-3",
+      "price": 128,
+      "image": "https://vue-ecom.vercel.app/img/6.jpg",
+      "category": "sofas",
+      "color": "gray"
+    },
+    {
+      "id": 8,
+      "name": "Fotal-4",
+      "price": 142,
+      "image": "https://vue-ecom.vercel.app/img/6.jpg",
+      "category": "sofas",
+      "color": "white"
+    },
+    {
+      "id": 9,
+      "name": "Fotal-5",
+      "price": 110,
+      "image": "https://vue-ecom.vercel.app/img/6.jpg",
+      "category": "sofas",
+      "color": "red"
+    }
+  ]
+}
