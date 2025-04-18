@@ -6,6 +6,9 @@
           <li class="nav-item"><a href="#">Home</a></li>
           <li class="nav-item"><a href="#">About</a></li>
           <li class="nav-item"><a href="#">Contact</a></li>
+          <li class="nav-item"><a href="#"><router-link to="/login" class="text-blue-500">Login</router-link></a></li>
+          <li class="nav-item"><a href="#"><router-link to="/register" class="text-blue-500">Register</router-link></a></li>
+          
         </ul>
       </div>
       <div class="container">
