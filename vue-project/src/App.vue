@@ -1,19 +1,28 @@
 <script setup>
 import Header from "./components/layout/Header.vue";
 import Footer from "./components/layout/Footer.vue";
-import Home from "./views/Home.vue";
 </script>
 
 <template>
-  <div class="container">
+  <div class="w-100">
     <Header />
-    <Home />
+    <RouterView />
     <Footer />
   </div>
 </template>
 
-<style scoped>
-.logo {
+<style scoped></style>
+
+<!-- <div>
+  <a href="https://vite.dev" target="_blank">
+    <img src="/vite.svg" class="logo" alt="Vite logo" />
+  </a>
+  <a href="https://vuejs.org/" target="_blank">
+    <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+  </a>
+</div> -->
+
+<!-- .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -24,14 +33,4 @@ import Home from "./views/Home.vue";
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
-
-<!-- <div>
-  <a href="https://vite.dev" target="_blank">
-    <img src="/vite.svg" class="logo" alt="Vite logo" />
-  </a>
-  <a href="https://vuejs.org/" target="_blank">
-    <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-  </a>
-</div> -->
+} -->

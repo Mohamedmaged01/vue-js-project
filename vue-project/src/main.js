@@ -1,5 +1,5 @@
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./style.css";
+// import "./style.css";
 
 import { createPinia } from "pinia";
 const pinia = createPinia();
