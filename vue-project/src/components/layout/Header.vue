@@ -52,6 +52,9 @@
             <router-link to="/login" class="nav-link">Sign In</router-link>
           </li>
           <li class="nav-item ms-5 hover-link">
+            <router-link to="/register" class="nav-link">Register</router-link>
+          </li>
+          <li class="nav-item ms-5 hover-link">
             <router-link to="/cart" class="nav-link"
               ><i class="fas fa-shopping-cart"></i
             ></router-link>
