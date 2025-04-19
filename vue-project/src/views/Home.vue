@@ -54,7 +54,7 @@
     <div class="w-100 p-4">
       <!-- comment -->
       <div class="row">
-        <div class="col-6">
+        <div class="col-md-6 col-sm-12">
           <div class="w-100">
             <img
               class="w-100"
@@ -63,7 +63,9 @@
             />
           </div>
         </div>
-        <div class="col-12 col-sm-6">
+        <div
+          class="col-md-6 col-sm-12 text-sm-start text-md-start ml-sm-0 ml-md-5 ml-lg-5 ml-xl-5 text-lg-start"
+        >
           <h1>New minimalist</h1>
           <h2>–components</h2>
           <p>
@@ -78,7 +80,7 @@
     </div>
     <div class="w-100">
       <div class="row">
-        <div class="col-md-6 p-0">
+        <div class="col-md-6 col-sm-12 p-0">
           <img
             src="https://vue-ecom.vercel.app/img/33.jpg"
             class="img-fluid w-100 h-100 object-fit-cover me-5 pe-1"
@@ -87,7 +89,7 @@
         </div>
 
         <div
-          class="col-12 col-sm-6 text-sm-right text-md-right ml-sm-0 ml-md-5 ml-lg-5 ml-xl-5 text-lg-right order-sm-first order-12 text-end"
+          class="col-md-6 col-sm-12 text-sm-left text-md-right ml-sm-0 ml-md-5 ml-lg-5 ml-xl-5 text-lg-right order-sm-first order-12 text-md-end text-sm-start"
           style="margin-right: -8%; z-index: 1"
         >
           <h1 class="">Save Space <br />more freedom</h1>
@@ -112,7 +114,7 @@
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  border: 2px solid #0dcaf0; /* لون border لبني */
+  border: 2px solid #0dcaf0;
   background-color: white;
   opacity: 0.8;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -120,7 +122,7 @@
 }
 
 .carousel-indicators .indicator.active {
-  background-color: #0dcaf0; /* اللبني */
+  background-color: #0dcaf0;
   transform: scale(1.2);
 }
 </style>

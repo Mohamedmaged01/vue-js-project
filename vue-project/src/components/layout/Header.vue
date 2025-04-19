@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-nav w-100 shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-light bg-nav w-100 shadow-sm mb-1">
     <div class="container-fluid">
       <!-- Logo -->
-      <a class="navbar-brand ms-5" href="#">
+      <a class="navbar-brand ms-3" href="#">
         <img
           src="https://vue-ecom.vercel.app/img/fi-logo.svg"
           alt="Logo"
@@ -15,25 +15,26 @@
       <button
         class="navbar-toggler"
         type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
+        @click="toggleMenu"
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <!-- Navbar links -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div
+        class="collapse navbar-collapse"
+        id="navbarSupportedContent"
+        ref="navbarCollapse"
+      >
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center fs-6">
-          <li class="nav-item ms-5 hover-link">
-            <a class="nav-link active" href="#">Home</a>
+          <li class="nav-item ms-3 hover-link">
+            <router-link to="/" class="nav-link">Home</router-link>
           </li>
-          <li class="nav-item ms-5 hover-link">
+          <li class="nav-item ms-3 hover-link">
             <a class="nav-link" href="#">Products</a>
           </li>
-          <li class="nav-item ms-5 hover-link">
+          <li class="nav-item ms-3 hover-link">
             <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
@@ -65,7 +66,27 @@
   </nav>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref, onMounted } from "vue";
+import { Collapse } from "bootstrap"; // Import Bootstrap Collapse
+
+const navbarCollapse = ref(null);
+let bsCollapseInstance = null;
+
+const toggleMenu = () => {
+  if (bsCollapseInstance) {
+    bsCollapseInstance.toggle();
+  }
+};
+
+onMounted(() => {
+  if (navbarCollapse.value) {
+    bsCollapseInstance = new Collapse(navbarCollapse.value, {
+      toggle: false, // Prevent automatic toggling on initialization
+    });
+  }
+});
+</script>
 
 <style scoped>
 .bg-nav {
