@@ -47,7 +47,7 @@
           />
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center fs-6">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end fs-6">
           <li class="nav-item ms-5 hover-link">
             <router-link to="/login" class="nav-link">Sign In</router-link>
           </li>
