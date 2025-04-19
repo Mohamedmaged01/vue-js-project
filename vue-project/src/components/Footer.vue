@@ -1,17 +1,17 @@
 <template>
   <footer class="w-100 bg-light mt-1">
-    <div class="w-100 bg-lightblue mb-3">
+    <div class="w-100 bg-lightblue">
       <div class="container p-4">
-        <div class="row p-4 align-items-center justify-content-center">
-          <div class="col-md-6">
+        <div class="row p-4">
+          <div class="col-md-6 col-sm-12">
             <h2 class="fw-bold">Join our Newsletter</h2>
             <p class="text-muted">
               Nulla ac convallis lorem, eget euismod nisl. bibendum nec.
             </p>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-sm-12">
             <form class="mt-4">
-              <div class="form-group align-items-center">
+              <div class="form-group">
                 <input
                   type="email"
                   class="form-control form-control-lg border-0 border-bottom border-secondary shadow-none bg-transparent"
@@ -34,7 +34,7 @@
     </div>
 
     <div class="container p-4">
-      <div class="row mb-4">
+      <div class="row mb-4 justify-content-between">
         <div
           class="row col-md-6 col-sm-12 align-items-center justify-content-center"
         >
@@ -66,22 +66,30 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-6 col-sm-12 text-end">
-          <p class="fs-4">399 Crowfield Road, Phoenix, Arizona 85012</p>
-          <p class="fs-6"><a href="#">asff@fdsfsdc.com</a> | +602-926-5809</p>
+        <div class="col-md-6 col-sm-12">
+          <div class="col-md-12 text-md-end">
+            <p class="fs-4">399 Crowfield Road, Phoenix, Arizona 85012</p>
+            <p class="fs-6"><a href="#">asff@fdsfsdc.com</a> | +602-926-5809</p>
+          </div>
+
+          <div class="col-md-12 text-md-end fs-1">
+            <span class="me-3">Get social</span>
+            <a href="#" class="me-3 hover-icon"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" class="me-3 hover-icon"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="me-3 hover-icon"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="hover-icon"><i class="fab fa-pinterest"></i></a>
+          </div>
         </div>
       </div>
-      <div class="row align-items-center d-flex-reverse justify-content-center">
-        <div
-          class="col-md-6 col-sm-12 d-flex justify-content-md-end justify-content-sm-center fs-1"
-        >
-          <a href="#" class="me-3"><i class="fab fa-facebook"></i></a>
-          <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
-          <a href="#" class=""><i class="fab fa-pinterest"></i></a>
-        </div>
-        <div class="col-md-6 col-sm-12 text-center text-md-start">
-          <p class="fs-5 mb-0">&copy; 2025. All rights reserved.</p>
+      <div class="row justify-content-between">
+        <div class="col-sm-12 text-center">
+          <p class="fs-5">&copy; 2025. All rights reserved.</p>
         </div>
       </div>
     </div>
@@ -111,5 +119,13 @@
   font-weight: bold;
   border: none;
   box-shadow: 0px 0px 5px #ddd;
+}
+.hover-icon {
+  color: #333;
+  transition: all 0.4s ease;
+}
+.hover-icon:hover {
+  color: #dbf0fa;
+  transform: scale(1.2);
 }
 </style>
