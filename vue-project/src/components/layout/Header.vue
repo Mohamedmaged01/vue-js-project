@@ -29,41 +29,53 @@
         ref="navbarCollapse"
       >
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center fs-6">
-          <li class="nav-item ms-3 hover-link">
-            <router-link to="/" class="nav-link">Home</router-link>
+          <li class="nav-item ms-3">
+            <router-link to="/" class="nav-link hover-link">Home</router-link>
           </li>
-          <li class="nav-item ms-3 hover-link">
-            <router-link to="/" class="nav-link">Products</router-link>
+          <li class="nav-item ms-3">
+            <router-link to="/" class="nav-link hover-link"
+              >Products</router-link
+            >
           </li>
-          <li class="nav-item ms-3 hover-link">
-            <router-link to="/" class="nav-link">Contact</router-link>
+          <li class="nav-item ms-3">
+            <router-link to="/" class="nav-link hover-link"
+              >Contact</router-link
+            >
           </li>
         </ul>
+        <div class="d-lg-flex align-items-center">
+          <!-- Search form -->
+          <form class="d-flex me-4">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
 
-        <form class="d-flex">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        <ul
-          class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end fs-6"
-        >
-          <li class="nav-item ms-5 hover-link">
-            <router-link to="/login" class="nav-link">Sign In</router-link>
-          </li>
-          <li class="nav-item ms-5 hover-link">
-            <router-link to="/register" class="nav-link">Register</router-link>
-          </li>
-          <li class="nav-item ms-5 hover-link">
-            <router-link to="/" class="nav-link"
-              ><i class="fas fa-shopping-cart"></i
-            ></router-link>
-          </li>
-        </ul>
+          <!-- Links -->
+          <ul class="navbar-nav d-lg-flex flex-lg-row mb-2 mb-lg-0 fs-5">
+            <li class="nav-item ms-3">
+              <router-link to="/login" class="nav-link hover-link"
+                >Sign In</router-link
+              >
+            </li>
+            <li class="nav-item ms-3">
+              <router-link to="/register" class="nav-link hover-link"
+                >Register</router-link
+              >
+            </li>
+            <li class="nav-item ms-3">
+              <router-link to="/" class="nav-link">
+                <i class="fas fa-shopping-cart hover-link"></i>
+              </router-link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
