@@ -1,4 +1,3 @@
-// ProductDetail.vue
 <template>
   <div class="product-detail-page">
     <!-- Breadcrumb navigation -->
