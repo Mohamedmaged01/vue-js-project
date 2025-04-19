@@ -24,11 +24,11 @@ const routes = [
     component: productDetails,
     // props: true,
   },
-  {
-    path: "/contact",
-    name: "Contact",
-    component: contact,
-  },
+  // {
+  //   path: "/contact",
+  //   name: "Contact",
+  //   component: contact,
+  // },
   {
     path: "/login",
     name: "Login",
@@ -38,7 +38,7 @@ const routes = [
     path: "/register",
     name: "Register",
     component: Register,
-  }
+  },
 ];
 
 const router = createRouter({

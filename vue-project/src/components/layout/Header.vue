@@ -30,17 +30,15 @@
       >
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center fs-6">
           <li class="nav-item ms-3">
-            <router-link to="/" class="nav-link hover-link">Home</router-link>
+            <router-link to="/" class="hover-link">Home</router-link>
           </li>
           <li class="nav-item ms-3">
-            <router-link to="/products" class="nav-link hover-link"
+            <router-link to="/products" class="hover-link"
               >Products</router-link
             >
           </li>
           <li class="nav-item ms-3">
-            <router-link to="/contact" class="nav-link hover-link"
-              >Contact</router-link
-            >
+            <router-link to="/contact" class="hover-link">Contact</router-link>
           </li>
         </ul>
         <div class="d-lg-flex align-items-center">
@@ -70,7 +68,7 @@
               >
             </li>
             <li class="nav-item ms-3">
-              <router-link to="/cart" class="nav-link">
+              <router-link to="/" class="nav-link">
                 <i class="fas fa-shopping-cart hover-link"></i>
               </router-link>
             </li>
