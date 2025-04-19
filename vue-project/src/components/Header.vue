@@ -29,11 +29,9 @@
         ref="navbarCollapse"
       >
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center fs-6">
+          
           <li class="nav-item ms-3">
-            <router-link to="/" class="nav-link hover-link">Home</router-link>
-          </li>
-          <li class="nav-item ms-3">
-            <router-link to="/" class="nav-link hover-link"
+            <router-link to="/products" class="nav-link hover-link"
               >Products</router-link
             >
           </li>

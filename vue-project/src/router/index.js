@@ -4,7 +4,7 @@ import productDetails from "../views/productDetails.vue";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
-// import Cart from "../views/Cart.vue";
+import Cart from "../views/Cart.vue";
 // import Checkout from "../views/Checkout.vue";
 
 const routes = [
@@ -22,12 +22,7 @@ const routes = [
     path: "/products/:id",
     name: "ProductDetail",
     component: productDetails,
-    // props: true,
-  },
-  {
-    path: "/contact",
-    name: "Contact",
-    component: contact,
+    props: true,
   },
   {
     path: "/login",
@@ -38,7 +33,12 @@ const routes = [
     path: "/register",
     name: "Register",
     component: Register,
-  }
+  },
+  {
+    path: "/cart",
+    name: "cart",
+    component: Cart,
+  },
 ];
 
 const router = createRouter({
