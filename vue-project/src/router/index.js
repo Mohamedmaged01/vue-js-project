@@ -5,6 +5,10 @@ import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import Cart from "../views/Cart.vue";
+
+
+// 2- define routes
+
 // import Checkout from "../views/Checkout.vue";
 
 const routes = [
@@ -22,8 +26,13 @@ const routes = [
     path: "/products/:id",
     name: "ProductDetail",
     component: productDetails,
-    props: true,
+    // props: true,
   },
+  // {
+  //   path: "/contact",
+  //   name: "Contact",
+  //   component: contact,
+  // },
   {
     path: "/login",
     name: "Login",
@@ -38,7 +47,7 @@ const routes = [
     path: "/cart",
     name: "cart",
     component: Cart,
-  },
+  }
 ];
 
 const router = createRouter({
