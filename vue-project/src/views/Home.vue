@@ -54,7 +54,7 @@
     <div class="w-100 p-4">
       <!-- comment -->
       <div class="row">
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-6 col-sm-12 order-sm-last order-md-first">
           <div class="w-100">
             <img
               class="w-100"
@@ -64,10 +64,10 @@
           </div>
         </div>
         <div
-          class="col-md-6 col-sm-12 text-sm-start text-md-start ml-sm-0 ml-md-5 ml-lg-5 ml-xl-5 text-lg-start"
+          class="col-md-6 col-sm-12 text-sm-start text-md-start ml-sm-0 ml-md-5 ml-lg-5 ml-xl-5 text-lg-start order-sm-first order-md-last"
         >
           <h1>New minimalist</h1>
-          <h2>–components</h2>
+          <h2>– components</h2>
           <p>
             Gravity will force your feet to the ground. Don’t be afraid, your
             mind will find your freedom. You won’t miss a sunrise. You’ll rise
