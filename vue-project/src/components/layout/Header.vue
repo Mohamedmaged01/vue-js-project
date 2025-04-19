@@ -2,14 +2,14 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-nav w-100 shadow-sm">
     <div class="container-fluid">
       <!-- Logo -->
-      <a class="navbar-brand ms-5" href="#">
+      <router-link to="/" class="nav-link">
         <img
-          src="https://vue-ecom.vercel.app/img/fi-logo.svg"
-          alt="Logo"
-          height="50"
-          width="50"
+            src="https://vue-ecom.vercel.app/img/fi-logo.svg"
+            alt="Logo"
+            height="50"
+            width="50"
         />
-      </a>
+      </router-link>
 
       <!-- Toggle button -->
       <button
@@ -47,7 +47,7 @@
           />
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
-        <ul class="navbar-nav me-2 mb-2 mb-lg-0 fs-5">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center fs-6">
           <li class="nav-item ms-5 hover-link">
             <router-link to="/login" class="nav-link">Sign In</router-link>
           </li>
@@ -74,7 +74,6 @@
 .hover-link:hover {
   color: #ddb00f;
   font-weight: bold;
-  transform: scale(1.15);
-  text-decoration: underline;
+  transform: scale(1.03);
 }
 </style>
