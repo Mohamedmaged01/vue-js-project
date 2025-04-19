@@ -2,7 +2,6 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-nav w-100 shadow-sm mb-1">
     <div class="container-fluid">
       <!-- Logo -->
-
       <router-link to="/" class="nav-link navbar-brand ms-3">
         <img
           src="https://vue-ecom.vercel.app/img/fi-logo.svg"
@@ -33,7 +32,7 @@
             <router-link to="/" class="nav-link hover-link">Home</router-link>
           </li>
           <li class="nav-item ms-3">
-            <router-link to="/" class="nav-link hover-link"
+            <router-link to="/products" class="nav-link hover-link"
               >Products</router-link
             >
           </li>
@@ -69,9 +68,13 @@
                 >Register</router-link
               >
             </li>
-            <li class="nav-item ms-3">
+            <li class="nav-item ms-3 position-relative">
               <router-link to="/cart" class="nav-link">
                 <i class="fas fa-shopping-cart hover-link"></i>
+                <span v-if="cartItemsCount > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {{ cartItemsCount }}
+                  <span class="visually-hidden">items in cart</span>
+                </span>
               </router-link>
             </li>
           </ul>
@@ -82,11 +85,17 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-import { Collapse } from "bootstrap"; // Import Bootstrap Collapse
+import { ref, onMounted, computed } from "vue";
+import { Collapse } from "bootstrap";
+import { useCartStore } from "../stores/cart.js"; 
 
+const cartStore = useCartStore();
 const navbarCollapse = ref(null);
 let bsCollapseInstance = null;
+
+const cartItemsCount = computed(() => {
+  return cartStore.items.reduce((total, item) => total + item.quantity, 0);
+});
 
 const toggleMenu = () => {
   if (bsCollapseInstance) {
@@ -97,7 +106,7 @@ const toggleMenu = () => {
 onMounted(() => {
   if (navbarCollapse.value) {
     bsCollapseInstance = new Collapse(navbarCollapse.value, {
-      toggle: false, // Prevent automatic toggling on initialization
+      toggle: false,
     });
   }
 });
@@ -111,5 +120,12 @@ onMounted(() => {
   color: #ddb00f;
   font-weight: bold;
   transform: scale(1.03);
+}
+
+
+.badge {
+  font-size: 0.7em;
+  padding: 0.35em 0.5em;
+  min-width: 1.5em;
 }
 </style>
