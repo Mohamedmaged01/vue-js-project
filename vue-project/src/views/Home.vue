@@ -1,54 +1,54 @@
 <template>
   <div class="w-100">
     <div class="p-0">
-      <div id="carouselExampleIndicators" class="carousel slide">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
         <ol class="carousel-indicators">
           <li
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            class="indicator active list-unstyled"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></li>
-
-          <li
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
+            v-for="(slide, index) in slides.slides"
+            :key="slide.id"
             class="indicator list-unstyled"
-            aria-label="Slide 2"
-          ></li>
-
-          <li
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            class="indicator list-unstyled"
-            aria-label="Slide 3"
+            :data-bs-target="'#carouselExampleIndicators'"
+            :data-bs-slide-to="index"
+            :class="{ active: index === 0 }"
+            :aria-label="`Slide ${index + 1}`"
+            :aria-current="index === 0 ? 'true' : null"
           ></li>
         </ol>
 
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="https://vue-ecom.vercel.app/img/jum1.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="https://vue-ecom.vercel.app/img/jum2.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="https://vue-ecom.vercel.app/img/jum3.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
+          <div
+            v-for="(slide, index) in slides.slides"
+            :key="slide.id"
+            class="carousel-item"
+            :class="{ active: index === 0 }"
+          >
+            <img :src="slide.image" class="d-block w-100" alt="Slider Image" />
           </div>
         </div>
+
+        <!-- Optional next/prev buttons -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
     <div class="w-100 p-4">
@@ -107,7 +107,16 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted } from "vue";
+import { useSlidesStore } from "../stores/counter.js";
+
+const slides = useSlidesStore();
+
+onMounted(() => {
+  slides.fetchSlides();
+});
+</script>
 
 <style scoped>
 .carousel-indicators .indicator {

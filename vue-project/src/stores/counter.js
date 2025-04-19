@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { ref } from "vue";
 
 // You can name the return value of `defineStore()` anything you want,
 // but it's best to use the name of the store and surround it with `use`
@@ -18,4 +19,25 @@ export const useCounterStore = defineStore("counter", {
       this.count++;
     },
   },
+});
+
+export const useSlidesStore = defineStore("slides", () => {
+  const slides = ref([]);
+  const isLoading = ref(false);
+  const error = ref(null);
+
+  const fetchSlides = async () => {
+    isLoading.value = true;
+    error.value = null;
+    try {
+      const res = await fetch("http://localhost:3000/slides");
+      const data = await res.json();
+      slides.value = data;
+    } catch (err) {
+      error.value = err.message;
+    } finally {
+      isLoading.value = false;
+    }
+  };
+  return { slides, isLoading, error, fetchSlides };
 });
