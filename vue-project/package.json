@@ -17,6 +17,7 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@types/vue-router": "^2.0.0",
     "@vitejs/plugin-vue": "^5.2.2",
     "json-server": "^1.0.0-beta.3",
     "vite": "^6.3.2"

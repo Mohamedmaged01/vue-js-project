@@ -48,7 +48,7 @@
 </template>
 
 <script setup>
-import { useCartStore } from '@/stores/cart';
+import { useCartStore } from '../stores/cart';
 const cart = useCartStore();
 
 const formatCurrency = (value) =>

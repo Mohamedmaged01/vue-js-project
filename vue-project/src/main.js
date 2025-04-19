@@ -1,7 +1,6 @@
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-// import "./style.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap";
 import "./style.css";
 
