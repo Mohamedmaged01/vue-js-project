@@ -70,7 +70,7 @@
               >
             </li>
             <li class="nav-item ms-3">
-              <router-link to="/" class="nav-link">
+              <router-link to="/cart" class="nav-link">
                 <i class="fas fa-shopping-cart hover-link"></i>
               </router-link>
             </li>

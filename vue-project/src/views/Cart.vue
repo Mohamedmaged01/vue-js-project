@@ -7,7 +7,7 @@
         </div>
 
         <table v-else class="table table-bordered table-striped text-center mt-4">
-            <thead>
+            <thead class="bg-gray">
                 <tr>
                     <th>Name</th>
                     <th>Price</th>
