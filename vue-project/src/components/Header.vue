@@ -28,7 +28,6 @@
         ref="navbarCollapse"
       >
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center fs-6">
-          
           <li class="nav-item ms-3">
             <router-link to="/" class="nav-link hover-link">Home</router-link>
           </li>
@@ -38,7 +37,7 @@
             >
           </li>
           <li class="nav-item ms-3">
-            <router-link to="/" class="nav-link hover-link"
+            <router-link to="/contact" class="nav-link hover-link"
               >Contact</router-link
             >
           </li>
@@ -72,7 +71,10 @@
             <li class="nav-item ms-3 position-relative">
               <router-link to="/cart" class="nav-link">
                 <i class="fas fa-shopping-cart hover-link"></i>
-                <span v-if="cartItemsCount > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                <span
+                  v-if="cartItemsCount > 0"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                >
                   {{ cartItemsCount }}
                   <span class="visually-hidden">items in cart</span>
                 </span>
@@ -88,7 +90,7 @@
 <script setup>
 import { ref, onMounted, computed } from "vue";
 import { Collapse } from "bootstrap";
-import { useCartStore } from "../stores/cart.js"; 
+import { useCartStore } from "../stores/cart.js";
 
 const cartStore = useCartStore();
 const navbarCollapse = ref(null);
@@ -122,7 +124,6 @@ onMounted(() => {
   font-weight: bold;
   transform: scale(1.03);
 }
-
 
 .badge {
   font-size: 0.7em;
