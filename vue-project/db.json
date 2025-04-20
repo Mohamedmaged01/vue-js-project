@@ -28,6 +28,20 @@
       "lastName": "nasr",
       "email": "nasr@nasr.com",
       "password": "nasrnasr123"
+    },
+    {
+      "id": "613f",
+      "firstName": "sarsora",
+      "lastName": "mahmoud",
+      "email": "sarasara@gmail.com",
+      "password": "sara1234"
+    },
+    {
+      "id": "acb5",
+      "firstName": "mohamed",
+      "lastName": "farag",
+      "email": "mohamed@gmail.com",
+      "password": "mohamed1234"
     }
   ],
   "products": [

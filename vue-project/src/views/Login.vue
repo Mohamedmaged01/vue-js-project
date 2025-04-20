@@ -93,6 +93,8 @@ export default {
         })
         if (response.data.length > 0) {
           this.$router.push('/')
+          console.log(response.data[0]);
+          localStorage.setItem('user' , response.data[0].firstName);
         } else {
           this.error = 'Email or password is incorrect'
         }

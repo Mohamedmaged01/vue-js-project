@@ -141,13 +141,15 @@ export default {
           this.error = 'Email already exists'
           return
         }
-        await axios.post('http://localhost:3000/users', {
+        const userData = {
           firstName: this.firstName,
           lastName: this.lastName,
           email: this.email,
           password: this.password
-        })
+        }
+        await axios.post('http://localhost:3000/users', userData)
         this.$router.push('/')
+        localStorage.setItem('user' , this.firstName);
       } catch (error) {
         this.error = 'An error occurred. Please try again.'
         console.error(error)
