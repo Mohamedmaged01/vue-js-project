@@ -104,9 +104,12 @@ const formatCurrency = (value) => {
 };
 
 const checkout = () => {
-    // Add your checkout logic here
-    alert('Proceeding to checkout!');
-    // router.push('/checkout');
+  if (cart.items.length === 0) {
+    alert('Your cart is empty. Please add items before checkout.');
+    return;
+  }
+  
+  router.push('/checkout');
 };
 </script>
 
