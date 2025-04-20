@@ -21,6 +21,13 @@
       "lastName": "maged",
       "email": "abomaged9990@gmail.com",
       "password": "12345678M"
+    },
+    {
+      "id": "2cbd",
+      "firstName": "nasr",
+      "lastName": "nasr",
+      "email": "nasr@nasr.com",
+      "password": "nasrnasr123"
     }
   ],
   "products": [
