@@ -4,6 +4,7 @@ import productDetails from "../views/productDetails.vue";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
+import NotFound from "../views/NotFound.vue";
 // import Cart from "../views/Cart.vue";
 // import Checkout from "../views/Checkout.vue";
 
@@ -39,6 +40,7 @@ const routes = [
     name: "Register",
     component: Register,
   },
+  { path: "/:pathMatch(.*)*", component: NotFound, name: "NotFound" },
 ];
 
 const router = createRouter({
