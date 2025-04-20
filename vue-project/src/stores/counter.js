@@ -41,3 +41,29 @@ export const useSlidesStore = defineStore("slides", () => {
   };
   return { slides, isLoading, error, fetchSlides };
 });
+
+// store for auth
+export const useAuthStore = defineStore("auth", {
+  state: () => ({
+    user: null,
+  }),
+  getters: {
+    isLoggedIn: (state) => !!state.user,
+  },
+  actions: {
+    login(user) {
+      this.user = user;
+      localStorage.setItem("user", JSON.stringify(user));
+    },
+    logout() {
+      this.user = null;
+      localStorage.removeItem("user");
+    },
+    loadUser() {
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (user) {
+        this.user = user;
+      }
+    },
+  },
+});

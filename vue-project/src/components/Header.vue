@@ -58,14 +58,14 @@
 
           <!-- Links -->
           <ul class="navbar-nav d-lg-flex flex-lg-row mb-2 mb-lg-0 fs-5">
-            <li class="nav-item ms-3">
+            <li v-if="!isLoggedIn" class="nav-item ms-3">
               <router-link to="/login" class="nav-link hover-link"
                 >Sign In</router-link
               >
             </li>
-            <li class="nav-item ms-3">
+            <li v-else @click="handleLogout" class="nav-item ms-3">
               <router-link to="/register" class="nav-link hover-link"
-                >Register</router-link
+                >Sign Out</router-link
               >
             </li>
             <li class="nav-item ms-3">
@@ -91,6 +91,17 @@
 import { ref, onMounted, computed } from "vue";
 import { Collapse } from "bootstrap";
 import { useCartStore } from "../stores/cart.js";
+import { useAuthStore } from "../stores/counter.js";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const auth = useAuthStore();
+const isLoggedIn = computed(() => auth.isLoggedIn);
+
+const handleLogout = () => {
+  auth.logout();
+  router.push("/login");
+};
 
 const cartStore = useCartStore();
 const navbarCollapse = ref(null);
@@ -130,5 +141,4 @@ onMounted(() => {
   padding: 0.35em 0.5em;
   min-width: 1.5em;
 }
-
 </style>

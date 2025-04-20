@@ -21,6 +21,13 @@
       "lastName": "maged",
       "email": "abomaged9990@gmail.com",
       "password": "12345678M"
+    },
+    {
+      "id": "6ded",
+      "firstName": "Abdelhameed",
+      "lastName": "Mohamed",
+      "email": "abdelhameed@gmail.com",
+      "password": "12345678M"
     }
   ],
   "products": [
@@ -97,7 +104,7 @@
       "inStock": 10
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "lamp 55",
       "price": 70,
       "image": "https://vue-ecom.vercel.app/img/9.jpg",
@@ -105,7 +112,7 @@
       "color": "white"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "sofa 5",
       "price": 220,
       "image": "https://vue-ecom.vercel.app/img/10.jpg",
@@ -113,7 +120,7 @@
       "color": "red"
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "lamp 77",
       "price": 80,
       "image": "https://vue-ecom.vercel.app/img/11.jpg",
@@ -121,7 +128,7 @@
       "color": "black"
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "sofa 6",
       "price": 190,
       "image": "https://vue-ecom.vercel.app/img/12.jpg",
@@ -129,7 +136,7 @@
       "color": "blue"
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "sofa 7",
       "price": 180,
       "image": "https://vue-ecom.vercel.app/img/13.jpg",
@@ -137,7 +144,7 @@
       "color": "blue"
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Fotal-5",
       "price": 200,
       "image": "https://vue-ecom.vercel.app/img/14.jpg",
@@ -147,15 +154,15 @@
   ],
   "slides": [
     {
-      "id": 1,
+      "id": "1",
       "image": "https://vue-ecom.vercel.app/img/jum1.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "image": "https://vue-ecom.vercel.app/img/jum2.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "image": "https://vue-ecom.vercel.app/img/jum3.jpg"
     }
   ]

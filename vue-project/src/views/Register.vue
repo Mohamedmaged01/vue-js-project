@@ -1,17 +1,26 @@
 <template>
-  <div class="w-100 min-vh-100 p-0 m-0">
+  <div class="w-100 min-vh-100 p-0 m-0 mt-5">
     <div class="container-fluid p-0 m-0">
       <div class="row m-0 h-100">
         <!-- Left half: Register Form -->
-        <div class="col-md-6 d-flex align-items-center justify-content-center p-3 order-md-0 order-1">
-          <div class="card p-4 shadow-sm" style="max-width: 500px; width: 100%;">
-            <h2 class="text-center mb-4 fw-bold" style="font-size: 2rem; color: #333;">
+        <div
+          class="col-md-6 d-flex align-items-center justify-content-center p-3 order-md-0 order-1"
+        >
+          <div class="card p-4 shadow-sm" style="max-width: 500px; width: 100%">
+            <h2
+              class="text-center mb-4 fw-bold"
+              style="font-size: 2rem; color: #333"
+            >
               Register
             </h2>
             <p v-if="error" class="text-danger text-center mb-3">{{ error }}</p>
             <form @submit.prevent="handleRegister">
               <div class="mb-3">
-                <label for="firstName" class="form-label fw-medium" style="color: #555;">
+                <label
+                  for="firstName"
+                  class="form-label fw-medium"
+                  style="color: #555"
+                >
                   First Name
                 </label>
                 <input
@@ -21,11 +30,15 @@
                   class="form-control"
                   placeholder="Enter your first name"
                   required
-                  style="border-radius: 8px;"
+                  style="border-radius: 8px"
                 />
               </div>
               <div class="mb-3">
-                <label for="lastName" class="form-label fw-medium" style="color: #555;">
+                <label
+                  for="lastName"
+                  class="form-label fw-medium"
+                  style="color: #555"
+                >
                   Last Name
                 </label>
                 <input
@@ -35,11 +48,15 @@
                   class="form-control"
                   placeholder="Enter your last name"
                   required
-                  style="border-radius: 8px;"
+                  style="border-radius: 8px"
                 />
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label fw-medium" style="color: #555;">
+                <label
+                  for="email"
+                  class="form-label fw-medium"
+                  style="color: #555"
+                >
                   Email
                 </label>
                 <input
@@ -49,11 +66,15 @@
                   class="form-control"
                   placeholder="Enter your email"
                   required
-                  style="border-radius: 8px;"
+                  style="border-radius: 8px"
                 />
               </div>
               <div class="mb-4">
-                <label for="password" class="form-label fw-medium" style="color: #555;">
+                <label
+                  for="password"
+                  class="form-label fw-medium"
+                  style="color: #555"
+                >
                   Password
                 </label>
                 <input
@@ -63,7 +84,7 @@
                   class="form-control"
                   placeholder="Enter your password"
                   required
-                  style="border-radius: 8px;"
+                  style="border-radius: 8px"
                 />
               </div>
               <button
@@ -76,15 +97,17 @@
                   padding: 12px;
                   font-weight: 500;
                 "
-                @mouseover="this.style.backgroundColor='#00b89c'"
-                @mouseout="this.style.backgroundColor='#00d1b2'"
+                @mouseover="this.style.backgroundColor = '#00b89c'"
+                @mouseout="this.style.backgroundColor = '#00d1b2'"
               >
                 Register
               </button>
             </form>
             <p class="text-center mt-3">
               Already have an account?
-              <router-link to="/login" class="text-primary fw-medium">Login</router-link>
+              <router-link to="/login" class="text-primary fw-medium"
+                >Login</router-link
+              >
             </p>
           </div>
         </div>
@@ -102,59 +125,60 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
-  name: 'Register',
+  name: "Register",
   data() {
     return {
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      error: ''
-    }
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      error: "",
+    };
   },
   methods: {
     async handleRegister() {
-      const nameRegex = /^[A-Za-z]+$/
-      const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
+      const nameRegex = /^[A-Za-z]+$/;
+      const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
       if (!nameRegex.test(this.firstName)) {
-        this.error = 'First name must contain only letters'
-        return
+        this.error = "First name must contain only letters";
+        return;
       }
       if (!nameRegex.test(this.lastName)) {
-        this.error = 'Last name must contain only letters'
-        return
+        this.error = "Last name must contain only letters";
+        return;
       }
       if (!passwordRegex.test(this.password)) {
-        this.error = 'Password must be at least 8 characters long and contain letters and numbers'
-        return
+        this.error =
+          "Password must be at least 8 characters long and contain letters and numbers";
+        return;
       }
 
       try {
-        const emailCheck = await axios.get('http://localhost:3000/users', {
-          params: { email: this.email }
-        })
+        const emailCheck = await axios.get("http://localhost:3000/users", {
+          params: { email: this.email },
+        });
         if (emailCheck.data.length > 0) {
-          this.error = 'Email already exists'
-          return
+          this.error = "Email already exists";
+          return;
         }
-        await axios.post('http://localhost:3000/users', {
+        await axios.post("http://localhost:3000/users", {
           firstName: this.firstName,
           lastName: this.lastName,
           email: this.email,
-          password: this.password
-        })
-        this.$router.push('/')
+          password: this.password,
+        });
+        this.$router.push("/");
       } catch (error) {
-        this.error = 'An error occurred. Please try again.'
-        console.error(error)
+        this.error = "An error occurred. Please try again.";
+        console.error(error);
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
