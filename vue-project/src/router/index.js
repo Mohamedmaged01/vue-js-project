@@ -5,7 +5,9 @@ import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import NotFound from "../views/NotFound.vue";
-// import Cart from "../views/Cart.vue";
+import Cart from "../views/Cart.vue";
+import contact from "../views/contact.vue";
+
 // import Checkout from "../views/Checkout.vue";
 
 const routes = [
@@ -23,13 +25,13 @@ const routes = [
     path: "/products/:id",
     name: "ProductDetail",
     component: productDetails,
-    // props: true,
+    props: true,
   },
-  // {
-  //   path: "/contact",
-  //   name: "Contact",
-  //   component: contact,
-  // },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: contact,
+  },
   {
     path: "/login",
     name: "Login",
@@ -39,6 +41,11 @@ const routes = [
     path: "/register",
     name: "Register",
     component: Register,
+  },
+  {
+    path: "/cart",
+    name: "cart",
+    component: Cart,
   },
   { path: "/:pathMatch(.*)*", component: NotFound, name: "NotFound" },
 ];

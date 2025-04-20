@@ -20,10 +20,9 @@
                 />
 
                 <button
-                  type="button"
+                  type="submit"
                   class="px-4 hover-btn shadow"
                   style="margin-top: 0px; padding: 10px"
-                  @click="Thank"
                 >
                   Submit
                 </button>
@@ -74,7 +73,7 @@
           </div>
 
           <div class="col-md-12 text-md-end fs-1">
-            <span class="me-3 fs-3">Get social</span>
+            <span class="me-3">Get social</span>
             <a href="#" class="me-3 hover-icon"
               ><i class="fab fa-facebook"></i
             ></a>
@@ -97,11 +96,7 @@
   </footer>
 </template>
 
-<script setup>
-function Thank() {
-  alert("Thank you for subscribing to our Team!");
-}
-</script>
+<script setup></script>
 
 <style scoped>
 .bg-lightblue {

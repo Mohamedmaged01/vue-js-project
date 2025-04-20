@@ -17,11 +17,8 @@
           <transition name="fade">
             <ul v-show="categoriesOpen">
               <li v-for="category in categories" :key="category.value">
-                <a
-                  href="#"
-                  @click.prevent="filterByCategory(category.value)"
-                  :class="{ active: selectedCategory === category.value }"
-                >
+                <a href="#" @click.prevent="filterByCategory(category.value)"
+                  :class="{ active: selectedCategory === category.value }">
                   {{ category.label }}
                 </a>
               </li>
@@ -38,17 +35,11 @@
               <div class="color-filter">
                 <h3>Color</h3>
                 <div class="color-options">
-                  <span
-                    v-for="color in availableColors"
-                    :key="color.value"
-                    :class="[
-                      'color-dot',
-                      color.value,
-                      { active: selectedColor === color.value },
-                    ]"
-                    @click="filterByColor(color.value)"
-                    :title="color.label"
-                  ></span>
+                  <span v-for="color in availableColors" :key="color.value" :class="[
+                    'color-dot',
+                    color.value,
+                    { active: selectedColor === color.value },
+                  ]" @click="filterByColor(color.value)" :title="color.label"></span>
                 </div>
               </div>
 
@@ -59,13 +50,8 @@
                     <span>${{ priceRange.min }}</span>
                     <span>${{ priceRange.max }}</span>
                   </div>
-                  <input
-                    type="range"
-                    :min="priceRange.min"
-                    :max="priceRange.max"
-                    v-model="currentPriceMax"
-                    class="slider"
-                  />
+                  <input type="range" :min="priceRange.min" :max="priceRange.max" v-model="currentPriceMax"
+                    class="slider" />
                   <div class="price-display">Up to ${{ currentPriceMax }}</div>
                 </div>
               </div>
@@ -111,32 +97,17 @@
           <button @click="fetchProducts" class="retry-btn">Try Again</button>
         </div>
 
-        <transition-group
-          name="product-list"
-          tag="div"
-          class="product-grid"
-          v-else
-        >
-          <div
-            class="product-card"
-            v-for="product in displayedProducts"
-            :key="product.id"
-          >
+        <transition-group name="product-list" tag="div" class="product-grid" v-else>
+          <div class="product-card" v-for="product in displayedProducts" :key="product.id">
             <div class="product-image-container">
-              <img
-                :src="product.image"
-                :alt="product.name"
-                class="product-image"
-              />
+              <img :src="product.image" :alt="product.name" class="product-image" />
               <div class="product-actions">
-                <button
-                  class="action-btn"
-                  @click.stop="navigateToProduct(product.id)"
-                >
+                <button class="action-btn" @click.stop="navigateToProduct(product.id)">
                   <span class="action-icon">♥</span>
                 </button>
-                <button class="action-btn add-to-cart">
-                  <span>Add to Cart</span>
+                <button class="action-btn add-to-cart" @click="cartStore.addProductToCart(product)"
+                  :disabled="product.inStock <= 0">
+                  Add to Cart
                 </button>
               </div>
             </div>
@@ -148,11 +119,7 @@
             </div>
           </div>
 
-          <div
-            v-if="displayedProducts.length === 0"
-            key="no-products"
-            class="no-products"
-          >
+          <div v-if="displayedProducts.length === 0" key="no-products" class="no-products">
             No products match your current filters.
           </div>
         </transition-group>
@@ -169,9 +136,12 @@
 import { ref, reactive, computed, onMounted } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
+import { useCartStore } from "../stores/cart.js";
+
 export default {
   name: "productsPage",
   setup() {
+    const cartStore = useCartStore();
     const router = useRouter();
     const products = ref([]);
     const loading = ref(true);
@@ -290,6 +260,11 @@ export default {
       currentPage.value++;
     };
 
+    const addToCart = (product) => {
+      if (product.inStock <= 0) return;
+      cartStore.addProductToCart(product);
+    };
+
     onMounted(() => {
       fetchProducts();
     });
@@ -318,6 +293,8 @@ export default {
       fetchProducts,
       loadMore,
       navigateToProduct,
+      cartStore,
+      addToCart
     };
   },
 };
@@ -331,6 +308,7 @@ export default {
   padding: 0 20px;
   color: #333;
 }
+
 .product-name {
   color: #3498db;
   margin-bottom: 10px;
@@ -348,6 +326,7 @@ export default {
   color: #e74c3c;
   cursor: pointer;
 }
+
 .page-title {
   color: #2c3e50;
   text-align: center;
@@ -644,6 +623,7 @@ export default {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
