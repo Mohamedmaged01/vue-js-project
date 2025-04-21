@@ -126,7 +126,8 @@
 
 <script>
 import axios from "axios";
-
+import { useAuthStore } from "../stores/counter";
+import { toast } from "vue3-toastify";
 export default {
   name: "Register",
   data() {
@@ -137,6 +138,11 @@ export default {
       password: "",
       error: "",
     };
+  },
+  setup() {
+    const auth = useAuthStore();
+
+    return { auth };
   },
   methods: {
     async handleRegister() {
@@ -165,12 +171,22 @@ export default {
           this.error = "Email already exists";
           return;
         }
-        await axios.post("http://localhost:3000/users", {
+        const newUser = {
           firstName: this.firstName,
           lastName: this.lastName,
           email: this.email,
           password: this.password,
-        });
+        };
+        console.log(newUser.firstName);
+        console.log(newUser.lastName);
+        await axios.post("http://localhost:3000/users", newUser);
+
+        // after register go to auth store
+        this.auth.login(newUser);
+        sessionStorage.setItem("welcomeShow", "true");
+
+        // toast.success(`Welcome 🎉 ${this.firstName}, your account is ready!`);
+        // redirect to home
         this.$router.push("/");
       } catch (error) {
         this.error = "An error occurred. Please try again.";

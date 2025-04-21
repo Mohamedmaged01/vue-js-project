@@ -28,6 +28,48 @@
       "lastName": "Mohamed",
       "email": "abdelhameed@gmail.com",
       "password": "12345678M"
+    },
+    {
+      "id": "09f5",
+      "firstName": "Nasr",
+      "lastName": "Nasr",
+      "email": "nasr@gmail.com",
+      "password": "12345678N"
+    },
+    {
+      "id": "70c4",
+      "firstName": "Mido",
+      "lastName": "Eldone",
+      "email": "mido@gmail.com",
+      "password": "1234567M"
+    },
+    {
+      "id": "00d9",
+      "firstName": "Aya",
+      "lastName": "Zain",
+      "email": "aya@gmail.com",
+      "password": "1234567A"
+    },
+    {
+      "id": "1052",
+      "firstName": "Maha",
+      "lastName": "Ahmed",
+      "email": "maha@gmail.com",
+      "password": "12345677M"
+    },
+    {
+      "id": "5f7a",
+      "firstName": "Nor",
+      "lastName": "Taha",
+      "email": "nor@gmail.com",
+      "password": "12345678N"
+    },
+    {
+      "id": "dac5",
+      "firstName": "Omar",
+      "lastName": "Abdelfattah",
+      "email": "omar@gmail.com",
+      "password": "12345678O"
     }
   ],
   "products": [

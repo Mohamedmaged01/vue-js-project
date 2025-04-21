@@ -91,6 +91,7 @@
 <script>
 import axios from "axios";
 import { useAuthStore } from "../stores/counter";
+import { toast } from "vue3-toastify";
 
 export default {
   name: "Login",
@@ -103,6 +104,7 @@ export default {
   },
   setup() {
     const auth = useAuthStore();
+
     return { auth };
   },
   methods: {
@@ -115,6 +117,15 @@ export default {
           const user = response.data[0];
           console.log(user);
           this.auth.login(user); // user login
+          sessionStorage.setItem("welcomeShow", "true");
+
+          // toast.success(`Welcome back 🎉, ${user.firstName} !`, {
+          //   position: "top-right",
+          //   timeout: 3000,
+          //   closeOnClick: true,
+          //   pauseOnHover: true,
+          //   draggable: true,
+          // });
           this.$router.push("/");
         } else {
           this.error = "Email or password is incorrect";

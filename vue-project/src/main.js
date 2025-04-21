@@ -11,5 +11,7 @@ import router from "./router/index.js";
 
 import { createApp } from "vue";
 import App from "./App.vue";
+import Vue3Toastify from "vue3-toastify";
+import "vue3-toastify/dist/index.css";
 
-createApp(App).use(router).use(pinia).mount("#app");
+createApp(App).use(Vue3Toastify).use(router).use(pinia).mount("#app");

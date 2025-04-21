@@ -1,5 +1,11 @@
 <template>
   <div class="w-100">
+    <div
+      v-if="showAlert"
+      class="alert alert-success text-center fw-bold fs-5 mb-4"
+    >
+      {{ alertMessage }}
+    </div>
     <div class="p-0">
       <div
         id="carouselExampleIndicators"
@@ -108,13 +114,27 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import { useSlidesStore } from "../stores/counter.js";
-
+import { useAuthStore } from "../stores/counter.js";
+const auth = useAuthStore();
 const slides = useSlidesStore();
+const showAlert = ref(false);
+const alertMessage = ref("");
 
 onMounted(() => {
   slides.fetchSlides();
+  auth.loadUser();
+
+  if (auth.user && sessionStorage.getItem("welcomeShow")) {
+    showAlert.value = true;
+    alertMessage.value = `Welcome back 🎉, ${auth.user.firstName}!`;
+
+    setTimeout(() => {
+      showAlert.value = false;
+      sessionStorage.removeItem("welcomeShow");
+    }, 3000);
+  }
 });
 </script>
 
